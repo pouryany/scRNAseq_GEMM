@@ -2,8 +2,8 @@
 
 This repository contains the codes for generating the figures and
 results presented in **Tumor editing during early tumorigenesis
-concentrates on suppressing innate and adaptive immune responses to the
-tumor and can be reversed by inhibiting DNA methylation**.
+suppresses innate and adaptive anti-tumor immunity and is reversed by
+inhibiting DNA methylation**.
 
 please contact `pnaderiy [at] bidmc [dot] harvard [dot] edu` for any
 questions you may have about the codes.
