@@ -1,5 +1,3 @@
-## UNDER construction
-
 ## Overview
 
 This repository contains the codes for generating the figures and
@@ -30,66 +28,66 @@ All codes relating to scRNA-Seq and bulk RNA-Seq are placed in the
 <tr class="header">
 <th>File name</th>
 <th>Description</th>
-<th>outputs</th>
+<th>outputs/Figures</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><code>01_import_sc.R</code></td>
-<td>Preprocessing raw scRNA-Seq reads from 10X assays</td>
+<td>Preprocessing raw scRNA-Seq reads from 10X assays.</td>
 <td>processed RDS files</td>
 </tr>
 <tr class="even">
 <td><code>02_01_clustering.R</code></td>
-<td>Normalizing and clustering processed scRNA-Seq data</td>
-<td></td>
+<td>Normalizing and clustering processed scRNA-Seq data.</td>
+<td>processed RDS files</td>
 </tr>
 <tr class="odd">
 <td><code>02_02_scPlots.R</code></td>
-<td>Plotting clusters and cellular subclasses</td>
-<td></td>
+<td>Plotting clusters and cellular subclasses.</td>
+<td>Figures 1B, 1C and S2B</td>
 </tr>
 <tr class="even">
 <td><code>03_01_tumor_plots.R</code></td>
 <td>Plotting tumor clusters, associated markers, and cellular
-proportions</td>
-<td></td>
+proportions.</td>
+<td>Figures 1F, S1, and S2</td>
 </tr>
 <tr class="odd">
 <td><code>03_02_tumor_markers.R</code></td>
 <td>Defining tumor markers and differentially expressed genes in
-specific subclusters between early and late tumors</td>
-<td></td>
+specific subclusters between early and late tumors.</td>
+<td>Marker genes for epithelial cell types and DE genes.</td>
 </tr>
 <tr class="even">
 <td><code>03_03_cytoTracing.R</code></td>
-<td>CytoTrace algorithm generates cell differentiation status</td>
-<td></td>
+<td>CytoTrace algorithm generates cell differentiation status.</td>
+<td>Figure 1G</td>
 </tr>
 <tr class="odd">
 <td><code>03_04_dirchlet_tumor.R</code></td>
 <td>Dirichlet regression determines changes in cellular proportions
-between late and early tumors</td>
-<td></td>
+between late and early tumors.</td>
+<td>Cell proportion table and associated statistics.</td>
 </tr>
 <tr class="even">
 <td><code>03_05_DEG_late_early_tumors.R</code></td>
 <td>Differentially expressed genes in pooled tumor subgroups between
-late and early samples</td>
-<td></td>
+late and early samples.</td>
+<td>Figure 2A</td>
 </tr>
 <tr class="odd">
 <td><code>04_01_Tcell.R</code></td>
 <td>Plots relating to T and NK cells, along with associated markers.
 Cell proportion analysis of T and NK cells between early and late
 tumors.</td>
-<td></td>
+<td>Figure 3</td>
 </tr>
 <tr class="even">
 <td><code>04_02_immune.R</code></td>
 <td>Generating cell-type markers of immune cells. Plotting key markers
 of immune cells</td>
-<td></td>
+<td>Figure S3A, marker genes for immune cells.</td>
 </tr>
 <tr class="odd">
 <td><code>05_00_cell_cell_communication_early.R</code></td>
@@ -107,36 +105,119 @@ tumors.</td>
 <td><code>05_01_cell_cell_communication_compare.R</code></td>
 <td>Comparison of cell-cell communication events between late and early
 tumors.</td>
-<td></td>
+<td>Figures 4 and S4</td>
 </tr>
 <tr class="even">
 <td><code>05_02_cell_cell_communication_secondary.R</code></td>
-<td></td>
-<td></td>
+<td>Comparison of cell-cell communication events between late and early
+tumors.</td>
+<td>Figure 4</td>
 </tr>
 <tr class="odd">
 <td><code>06_01_Bulk_comparison_tumor.R</code></td>
-<td></td>
-<td></td>
+<td>Comparison of single-cell and bulk RNA-Seq datasets.</td>
+<td>Figures 5J and S7</td>
 </tr>
 <tr class="even">
 <td><code>07_updated_figures.R</code></td>
-<td></td>
-<td></td>
+<td>Additional plots and analyses relating to immune cell
+populations.</td>
+<td>Figures S3 and S5A</td>
 </tr>
 <tr class="odd">
 <td><code>08_vln_significant.R</code></td>
-<td></td>
-<td></td>
+<td>Violin plots for functional markers across immune cell
+clusters.</td>
+<td>Figures 4D and S3D</td>
 </tr>
 <tr class="even">
 <td><code>09_Atp_genes.R</code></td>
-<td></td>
-<td></td>
+<td>Heatmaps of ATP- and metabolism-associated genes and pathways in
+tumors.</td>
+<td>Figure S2E</td>
 </tr>
 <tr class="odd">
 <td><code>10_ISG.R</code></td>
+<td>Defining interferon stimulated genes among differentially expressed
+genes in late versus early tumors.</td>
 <td></td>
+</tr>
+<tr class="even">
+<td><code>11_DESeq2_4T1.R</code></td>
+<td>Defining differentially expressed genes in decitabine treated 4T1
+cells versus untreated controls.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>12_DESeq2_B16.R</code></td>
+<td>Defining differentially expressed genes in decitabine treated B16
+cells versus untreated controls.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>utils.R</code></td>
+<td>Predefined functions for plotting and analysis.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+## Data instructions
+
+Supplementary files that are necessary for reproducing the study are
+provided in the `data/` directory
+
+<table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 44%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>File name</th>
+<th>Description</th>
+<th>Reference/Resource</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>20220913071924_GeneSearchResults.txt</code></td>
+<td>Interferon stimulated genes.</td>
+<td>The Interferome database</td>
+</tr>
+<tr class="even">
+<td><code>enrichment_neg_tumor_late_vs_early.csv</code></td>
+<td>GO enrichment results for genes downregulated in late tumors
+compared to early tumors</td>
+<td>This study</td>
+</tr>
+<tr class="odd">
+<td><code>Figure2B_table.csv</code></td>
+<td>Top GO pathways, manually grouped.</td>
+<td>This study</td>
+</tr>
+<tr class="even">
+<td><code>RNA_Seq_B16_raw.csv</code></td>
+<td>Gene expression profiles of decitabine-treated and control B16 cell
+lines.</td>
+<td>This study</td>
+</tr>
+<tr class="odd">
+<td><code>RNA_Seq_4T1_raw.csv</code></td>
+<td>Gene expression profiles of decitabine-treated and control 4T1 cell
+lines.</td>
+<td>This study</td>
+</tr>
+<tr class="even">
+<td><code>Table5_DEGenes_4T1.csv</code></td>
+<td>Differentially expressed genes between decitabine-treated and
+control 4T1 cell lines.</td>
+<td>This study</td>
+</tr>
+<tr class="odd">
+<td><code>Tumor_late_early--clustered default  node.csv</code></td>
+<td>GO clusters generated based on EnrichmentMap algorithm</td>
 <td></td>
 </tr>
 </tbody>
