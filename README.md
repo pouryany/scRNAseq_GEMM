@@ -13,10 +13,13 @@ questions you may have about the codes.
 ## Code instructions
 
 First, you need to download the filtered scRNA-Seq dataset from NCBI GEO
-and place it under a folder named `filtered_feature_bc_matrix`.
+(GSE234917) and place it under a folder named
+`filtered_feature_bc_matrix`.
 
 All codes relating to scRNA-Seq and bulk RNA-Seq are placed in the
 `codes` directory.
+
+Raw RNA-Seq data can be accessed from NCBI GEO (GSE212029)
 
 <table>
 <colgroup>
