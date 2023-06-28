@@ -45,13 +45,13 @@ All codes relating to scRNA-Seq and bulk RNA-Seq are placed in the
 <tr class="odd">
 <td><code>02_02_scPlots.R</code></td>
 <td>Plotting clusters and cellular subclasses.</td>
-<td>Figures 1B, 1C and S2B</td>
+<td>Figures 1B, 1C and Extended Data Fig. 2B</td>
 </tr>
 <tr class="even">
 <td><code>03_01_tumor_plots.R</code></td>
 <td>Plotting tumor clusters, associated markers, and cellular
 proportions.</td>
-<td>Figures 1F, S1, and S2</td>
+<td>Figures 1D, 1E, and 1G; Extended Data Fig 1, and 2A-D</td>
 </tr>
 <tr class="odd">
 <td><code>03_02_tumor_markers.R</code></td>
@@ -74,20 +74,20 @@ between late and early tumors.</td>
 <td><code>03_05_DEG_late_early_tumors.R</code></td>
 <td>Differentially expressed genes in pooled tumor subgroups between
 late and early samples.</td>
-<td>Figure 2A</td>
+<td>Figures 2A-B</td>
 </tr>
 <tr class="odd">
 <td><code>04_01_Tcell.R</code></td>
 <td>Plots relating to T and NK cells, along with associated markers.
 Cell proportion analysis of T and NK cells between early and late
 tumors.</td>
-<td>Figure 3</td>
+<td>Figures 3A-B</td>
 </tr>
 <tr class="even">
 <td><code>04_02_immune.R</code></td>
 <td>Generating cell-type markers of immune cells. Plotting key markers
 of immune cells</td>
-<td>Figure S3A, marker genes for immune cells.</td>
+<td>Extended Data Fig. 3A, marker genes for immune cells.</td>
 </tr>
 <tr class="odd">
 <td><code>05_00_cell_cell_communication_early.R</code></td>
@@ -105,7 +105,7 @@ tumors.</td>
 <td><code>05_01_cell_cell_communication_compare.R</code></td>
 <td>Comparison of cell-cell communication events between late and early
 tumors.</td>
-<td>Figures 4 and S4</td>
+<td>Figures 4A-B and Extended Data Fig. 4</td>
 </tr>
 <tr class="even">
 <td><code>05_02_cell_cell_communication_secondary.R</code></td>
@@ -116,25 +116,25 @@ tumors.</td>
 <tr class="odd">
 <td><code>06_01_Bulk_comparison_tumor.R</code></td>
 <td>Comparison of single-cell and bulk RNA-Seq datasets.</td>
-<td>Figures 5J and S7</td>
+<td>Figures 5J-K and Extended Data Fig. 7F</td>
 </tr>
 <tr class="even">
 <td><code>07_updated_figures.R</code></td>
 <td>Additional plots and analyses relating to immune cell
 populations.</td>
-<td>Figures S3 and S5A</td>
+<td>Extended Data Fig. 3C and 5A</td>
 </tr>
 <tr class="odd">
 <td><code>08_vln_significant.R</code></td>
 <td>Violin plots for functional markers across immune cell
 clusters.</td>
-<td>Figures 4D and S3D</td>
+<td>Figure 4D and Extended Data Fig. 3D</td>
 </tr>
 <tr class="even">
 <td><code>09_Atp_genes.R</code></td>
 <td>Heatmaps of ATP- and metabolism-associated genes and pathways in
 tumors.</td>
-<td>Figure S2E</td>
+<td>Extended Data Fig. S2E</td>
 </tr>
 <tr class="odd">
 <td><code>10_ISG.R</code></td>

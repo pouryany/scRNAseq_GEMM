@@ -65,10 +65,10 @@ for(item in my_features){
                                                 face = "plain"), 
                       legend.text = element_text(size = 24))
         
-        if(!dir.exists("figures/S1_S2C/"))
-                dir.create("figures/S1_S2C/",recursive = T)
+        if(!dir.exists("figures/S1_S2B/"))
+                dir.create("figures/S1_S2B/",recursive = T)
         
-        ggsave(paste0("figures/S1_S2C/",item,".png"),
+        ggsave(paste0("figures/S1_S2B/",item,".png"),
                p1,width = 4, height = 4)
         
         
@@ -170,7 +170,7 @@ p00 <- DimPlot(scGemms0,group.by = "cell_type_secondary",
         labs(title = NULL) & theme(title = element_text(hjust = 1)) &
         guides(color = guide_legend(override.aes = list(size=12), ncol=1) )
 
-ggsave("figures/01F_tumor_umap.pdf", height = 5, width = 10)
+ggsave("figures/01G_tumor_umap.pdf", height = 5, width = 10)
 
 
 
