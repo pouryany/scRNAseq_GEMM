@@ -1,0 +1,10 @@
+.DS_Store
+.Rhistory
+/filtered_feature_bc_matrix/*
+*.gz
+/Misc/
+/Misc2_no_upload/
+/scGEMM_app/
+/data/*.RDS
+/data/*.rds
+/codes/X*

@@ -1,0 +1,51 @@
+Term,Score,old cluster,cluster
+response to interferon-beta,22.86111237,cluster_1,Cluster 1
+cellular response to interferon-beta,19.84020287,cluster_1,Cluster 1
+type I interferon signaling pathway,8.913391566,cluster_7,Cluster 1
+cellular response to type I interferon,8.913391566,cluster_7,Cluster 1
+response to interferon-alpha,8.387605645,cluster_1,Cluster 1
+response to type I interferon,8.261071636,cluster_7,Cluster 1
+regulation of type I interferon-mediated signaling pathway,7.675688806,cluster_7,Cluster 1
+response to virus,16.98021265,cluster_3,Cluster 2
+defense response to virus,14.54825286,cluster_3,Cluster 2
+defense response to symbiont,14.54825286,cluster_3,Cluster 2
+defense response to protozoan,9.652695857,cluster_2,Cluster 3
+cellular response to interferon-gamma,12.46472784,cluster_2,Cluster 3
+response to interferon-gamma,18.60349445,cluster_2,Cluster 3
+response to bacterium,17.97753577,cluster_2,Cluster 3
+defense response to Gram-positive bacterium,7.335351697,cluster_2,Cluster 3
+defense response to bacterium,11.29986943,cluster_2,Cluster 3
+response to protozoan,9.146780887,cluster_2,Cluster 3
+regulation of cytokine-mediated signaling pathway,7.433589008,cluster_5,Cluster 4
+regulation of innate immune response,14.28726213,cluster_5,Cluster 4
+regulation of response to biotic stimulus,13.35426782,cluster_5,Cluster 4
+cytokine-mediated signaling pathway,7.155650932,cluster_5,Cluster 4
+negative regulation of response to biotic stimulus,8.252513797,cluster_5,Cluster 4
+regulation of response to cytokine stimulus,7.874450848,cluster_5,Cluster 4
+negative regulation of immune response,7.861106542,cluster_5,Cluster 4
+regulation of defense response,9.331411999,cluster_5,Cluster 4
+negative regulation of innate immune response,10.72841337,cluster_5,Cluster 4
+antigen processing and presentation of endogenous peptide antigen,13.35426782,cluster_6,Cluster 5
+antigen processing and presentation of endogenous peptide antigen via MHC class I,13.35426782,cluster_6,Cluster 5
+antigen processing and presentation of peptide antigen via MHC class I,12.9492103,cluster_6,Cluster 5
+antigen processing and presentation of endogenous antigen,12.87517199,cluster_6,Cluster 5
+antigen processing and presentation of peptide antigen via MHC class Ib,11.55949134,cluster_6,Cluster 5
+antigen processing and presentation via MHC class Ib,10.72841337,cluster_6,Cluster 5
+antigen processing and presentation of endogenous peptide antigen via MHC class Ib,10.09014908,cluster_6,Cluster 5
+antigen processing and presentation of endogenous peptide antigen via MHC class I via ER pathway,10.09014908,cluster_6,Cluster 5
+antigen processing and presentation,15.18940139,cluster_4,Cluster 5
+antigen processing and presentation of peptide antigen,14.28726213,cluster_4,Cluster 5
+antigen processing and presentation of exogenous antigen,8.88945691,cluster_4,Cluster 5
+"antigen processing and presentation of endogenous peptide antigen via MHC class I via ER pathway, TAP-independent",8.694407967,cluster_6,Cluster 5
+lymphocyte mediated immunity,7.217765766,cluster_4,Cluster 6
+positive regulation of adaptive immune response,7.113163877,cluster_4,Cluster 6
+regulation of immune effector process,7.076717509,cluster_4,Cluster 6
+positive regulation of immune response,8.999888307,cluster_4,Cluster 6
+positive regulation of T cell mediated cytotoxicity,9.146780887,cluster_6,Cluster 6
+positive regulation of T cell mediated immunity,7.73594113,cluster_6,Cluster 6
+regulation of leukocyte mediated cytotoxicity,7.915500176,cluster_6,Cluster 6
+regulation of T cell mediated cytotoxicity,8.22495738,cluster_6,Cluster 6
+cell killing,8.949259944,cluster_6,Cluster 6
+T cell mediated cytotoxicity,7.113163877,cluster_6,Cluster 6
+regulation of cell killing,7.217765766,cluster_6,Cluster 6
+oxidative phosphorylation,8.210763742,cluster_1,Cluster 7
