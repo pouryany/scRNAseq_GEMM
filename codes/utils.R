@@ -8,7 +8,7 @@ VlnPlot_costumized <- function(seurat_object,my_features,
                              ident = idents_order,
                              split = split_levels) 
     
-    data_text <- left_join(data_text,signif_list)
+    data_text <- dplyr::left_join(data_text,signif_list)
     data_text$y <- text_y
     if(plot_alphabetic == FALSE)
         data_text$feature <- factor(data_text$feature,levels  = my_features)

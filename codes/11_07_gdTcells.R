@@ -238,3 +238,16 @@ vln_eGFP1 <- VlnPlot_costumized(scGemms1,my_features = my_features,
   coord_fixed(0.1)
 
 ggsave("figures/Sup_trm_violin.pdf",vln_eGFP1, width = 10, height = 10)
+
+
+
+my_features2 <- c("Fcer1g","Xcl1","Itgae","Itga1","Klrb1a","Klrb1c",
+                  "Gzma","Gzmb","Clnk","Emid1","Chn2")
+
+vln_eGFP1 <- VlnPlot_costumized(scGemms1,my_features = my_features2,
+                                idents_order = "CD8+ TRM",
+                                signif_list = main_list,
+                                plot_alphabetic = F) +
+  coord_fixed(0.1)
+
+ggsave("figures/Sup_trm_ILTCKmarkers_violin.pdf",vln_eGFP1, width = 14, height = 14)

@@ -50,8 +50,11 @@ temp[["Cluster_Label"]]    <- plyr::mapvalues(temp$Cluster_Label,
                                               )
 Idents(temp) <- "Cluster_Label"
 rownames(temp)
-p1 <- FeaturePlot(temp,features = c( "Fcer1g","Xcl1","Itgae", "Itga1", "Klrd1","Cd44",
-                                     "Klrb1c","Gzmb","Cd160","Clnk"),ncol = 2, pt.size = 1,
+
+my_features2 <- c("Fcer1g","Xcl1","Itgae","Itga1","Klrb1a","Klrb1c",
+                  "Gzma","Gzmb","Clnk","Emid1","Chn2")
+
+p1 <- FeaturePlot(temp,features = my_features2,ncol = 2, pt.size = 1,
                   combine = T, cols = c("#d6d6d6","#6e016b"), min.cutoff = "q1")  &
     NoAxes() & theme(legend.position="bottom") & 
     guides(colourbar = guide_legend(override.aes = list(size=12, nrow = 1))) &
@@ -60,12 +63,11 @@ p1 <- FeaturePlot(temp,features = c( "Fcer1g","Xcl1","Itgae", "Itga1", "Klrd1","
 
 
 
-p1 <- VlnPlot(temp,features = c("Fcer1g","Xcl1","Itgae", "Itga1", "Klrd1",
-                                "Klrb1c","Gzmb","Trgv2","Clnk","Emid1","Chn2"), fill.by = "ident",
+p1 <- VlnPlot(temp,features = my_features2, fill.by = "ident",
               stack = T,flip = T,ncol = 3,pt.size = 0, same.y.lims = T, combine = T)&
     theme(axis.title.x = element_blank(), axis.text.x = element_text(size = 16),
           axis.title.y = element_blank(),  axis.text.y = element_text(size = 16),
-          strip.text =element_text(size = 20, face = "plain",vjust = 1,hjust = 0),
+          strip.text =element_text(size = 16, face = "plain",vjust = 1,hjust = 0),
           plot.title = element_text(size = 30, face = "plain", hjust = 0)) & coord_fixed(ratio = 0.4)
 
 ggsave("figures/Sup_LiLab_ILTCK_violin.pdf",p1, width = 14, height = 14)

@@ -215,8 +215,8 @@ for(thisGene in features){
     data_tcell$cell_type_secondary <- factor(rownames(data_tcell))
     
     data_tcell <- data_tcell[order_vec,]
-    data_tcell <- tidyr::pivot_longer(data_tcell,cols= c("Not expressed",
-                                                         "Expressed"),
+    data_tcell <- tidyr::pivot_longer(data_tcell,cols= c("Expressed",
+                                                         "Not expressed"),
                                       names_to = thisGene)
     
     
@@ -224,7 +224,8 @@ for(thisGene in features){
     data_tcell$cell_type_secondary <- factor(x = data_tcell$cell_type_secondary,
                                              levels = rev(order_vec))
     
-    
+    data_tcell[,thisGene] <- factor(dplyr::pull(data_tcell[,thisGene]),
+                                    levels = c("Not expressed","Expressed") )
     stack_plot <-  ggplot(data_tcell, aes(x = (cell_type_secondary),
                                           y =100* value,  fill = !!sym((thisGene)),
     )) +
@@ -244,7 +245,7 @@ for(thisGene in features){
             axis.line = element_blank(),
             axis.ticks = element_blank(), 
             title = element_text(size = 18),
-            legend.title = element_blank()) +
+            legend.title = element_blank(), legend.position = "none") +
       coord_flip()
     
     
@@ -256,7 +257,7 @@ for(thisGene in features){
 }
 
 p1 <- patchwork::wrap_plots(my_plots, ncol = 2)
-ggsave("figures/Sup_tumor_gsdm.pdf",p1, width = 14, height = 10)
+ggsave("figures/Sup_tumor_gsdm.pdf",p1, width = 10, height = 10)
 
 
 
