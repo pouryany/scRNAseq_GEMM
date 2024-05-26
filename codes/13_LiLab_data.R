@@ -71,3 +71,15 @@ p1 <- VlnPlot(temp,features = my_features2, fill.by = "ident",
           plot.title = element_text(size = 30, face = "plain", hjust = 0)) & coord_fixed(ratio = 0.4)
 
 ggsave("figures/Sup_LiLab_ILTCK_violin.pdf",p1, width = 14, height = 14)
+
+
+# my_features2 <- c("Itgae","Trac","Trbc1","Trbc2",
+#                   "Trdc","Tcrg-C1","Tcrg-C2","Tcrg-C3","Tcrg-C4", "Tcrg-V1","Tcrg-V3",
+#                   "Trgv2","Fcer1g","Ncr1")
+# p1 <- VlnPlot(temp,features = my_features2, fill.by = "ident",
+#               stack = T,flip = T,ncol = 3,pt.size = 0, same.y.lims = T, combine = T)&
+#     theme(axis.title.x = element_blank(), axis.text.x = element_text(size = 16),
+#           axis.title.y = element_blank(),  axis.text.y = element_text(size = 16),
+#           strip.text =element_text(size = 16, face = "plain",vjust = 1,hjust = 0),
+#           plot.title = element_text(size = 30, face = "plain", hjust = 0)) & coord_fixed(ratio = 0.4)
+# 
