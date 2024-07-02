@@ -2,6 +2,35 @@ rm(list = ls())
 
 library(stringr)
 library(ComplexHeatmap)
+library(dplyr)
+
+
+## Generate Source data figure 2
+
+
+temp <- read.csv("output/new_tumors/enrichment_neg_tumor_late_vs_early.csv")
+
+temp$Phenotype <- "DOWN"
+temp <- temp[,c("ID","Description", "pvalue", "p.adjust","qvalue",
+                "Phenotype","geneID")]
+colnames(temp) <- c("Go.ID", "Description", "p.Val", "FDR","qvalue",
+                    "Phenotype" , "Genes")
+
+temp$Genes <- gsub("\\/",",",temp$Genes)
+temp
+#gsub("\\",",", temp)
+
+
+temp2 <- read.table("data/Tumor_late_early--clustered default  node.csv",sep = ",", header = T)
+
+temp2 <- temp2 |> dplyr::select(name,X__mclCluster)
+
+
+temp2 <- dplyr::left_join(temp,temp2 , by = c("Go.ID" = "name"))
+
+write.csv(temp2,"output/Supplementary Table 7.csv")
+
+
 
 
 
@@ -38,6 +67,7 @@ scaled_mat <- genelists1
 
 enrich_de0  <- enrich_de[enrich_de$Gene %in% colnames(scaled_mat),]
 
+write.csv(enrich_de0,"output/SourceData Ex1_e_1_Ox.csv")
 rownames(enrich_de0) <- paste0(enrich_de0$Gene)
 enrich_de0$Gene <- NULL
 
@@ -130,6 +160,8 @@ scaled_mat <- genelists1
 
 enrich_de0  <- enrich_de[enrich_de$Gene %in% colnames(scaled_mat),]
 
+write.csv(enrich_de0,"output/SourceData Ex1_e_2_MT.csv")
+
 rownames(enrich_de0) <- paste0(enrich_de0$Gene)
 enrich_de0$Gene <- NULL
 
@@ -182,7 +214,7 @@ ht2 <- Heatmap(scaled_mat,
                heatmap_legend_param = list(direction = "horizontal"))
 
 
-pdf("figures/S02E_ATP_mitochondrial.pdf", width = 22, height = 10)
+pdf("figures/Ex01E_ATP_mitochondrial.pdf", width = 22, height = 10)
 ht1
 ht2
 dev.off()

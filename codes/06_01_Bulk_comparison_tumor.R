@@ -16,7 +16,6 @@ library(forcats)
 library(EnhancedVolcano)
 
 scGemms_meta = readRDS("data/03_umap_labled_1_metadata.RDS")
-scGemms_meta = scGemms_meta[scGemms_meta$cell_type_primary == "Tumor",]
 
 DE_4T1  <- read.csv("data/Table5_DEGenes_4T1.csv")
 
@@ -72,7 +71,7 @@ p1 <-   EnhancedVolcano(cluster0.markers,
 
 
 
-ggsave("figures/05J_4T1_volcano.pdf",width = 8,height = 8)
+ggsave("figures/06C_4T1_volcano.pdf",width = 8,height = 8)
 
 
 
@@ -148,9 +147,9 @@ tryCatch({
                 cat.dist = c(0.035, 0.035) ,
                 cat.pos = c(-9.5, 9.5),
                 scaled = T )
-        ggsave(paste0("figures/05K_scRNA_tumor_4T1_venn.PDF"),
+        ggsave(paste0("figures/06D_scRNA_tumor_4T1_venn.PDF"),
                plot =a, width = 12, height = 12)
-        ggsave(paste0("figures/05K_scRNA_tumor_4T1_venn_proportiona.PDF"),
+        ggsave(paste0("figures/06D_scRNA_tumor_4T1_venn_proportiona.PDF"),
                plot =b, width = 12, height = 12)
         write.csv(matrix(t(sort(de_both)), ncol = 7),
                   "output/new_tumors/All_tumor_down_DAC_up_4T1.csv")
@@ -239,7 +238,7 @@ p21 <- ggplot(unique_4T1, aes( fct_inorder(name), score, color = group)) +
               legend.text = element_text(size = 16))
 
 
-ggsave("figures/06E_shared_dac_scGemms.pdf", width = 18, height = 15)
+#ggsave("figures/06E_shared_dac_scGemms.pdf", width = 18, height = 15)
 
 
 
@@ -319,10 +318,10 @@ p3 <- ggplot(unique_4T1, aes( fct_inorder(name), score, color = group)) +
               legend.position="none",
               legend.text = element_text(size = 16))
 
-ggsave("figures/S07F_dac_no_scGemms.pdf", width = 19, height = 15)
+ggsave("figures/Ex08F_dac_no_scGemms.pdf", width = 19, height = 15)
 
 
 library(patchwork)
-ggsave("figures/S07_Full_dac_both.pdf", p21 + p3, width = 32, height = 15)
+ggsave("figures/Ex08F_Full_dac_both.pdf", p21 + p3, width = 32, height = 15)
 
 

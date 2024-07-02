@@ -53,30 +53,6 @@ my_features <- c( "Epcam","Ptprc","eGFP","Dcn",
 
 
 
-#> Individual panels corresponding to broad cellular and specific 
-#> epithelial markers for Figures S1 and S2C
-for(item in my_features){
-        
-        p1 <- FeaturePlot(scGemms,features = item
-                          ,ncol = 1,
-                          combine = T,cols = c("#d6d6d6","#6e016b"))  &
-                NoAxes()  & NoLegend() &
-                theme(plot.title = element_text(hjust = 0, size = 20,
-                                                face = "plain"), 
-                      legend.text = element_text(size = 24))
-        
-        if(!dir.exists("figures/S1_S2C/"))
-                dir.create("figures/S1_S2C/",recursive = T)
-        
-        ggsave(paste0("figures/S1_S2C/",item,".png"),
-               p1,width = 4, height = 4)
-        
-        
-}
-
-
-
-
 
 
 
@@ -101,7 +77,7 @@ scGemms0@active.ident <- factor(x = scGemms0@active.ident, levels = order_vec)
 
 
 
-p1 <- FeaturePlot(scGemms,features = c( "Epcam","eGFP"),ncol = 2, pt.size = 0.1,
+p1 <- FeaturePlot(scGemms0,features = c( "Epcam","eGFP"),ncol = 2, pt.size = 0.1,
                   combine = T, cols = c("#d6d6d6","#6e016b"), min.cutoff = "q1")  &
         NoAxes() & theme(legend.position="bottom") & 
         guides(colourbar = guide_legend(override.aes = list(size=12, nrow = 1))) &
@@ -110,6 +86,20 @@ p1 <- FeaturePlot(scGemms,features = c( "Epcam","eGFP"),ncol = 2, pt.size = 0.1,
 ggsave("figures/01D_1E_markers.png",p1,width = 7, height = 5)
 
 
+my_features2 <- c("Mki67","Aldh1a3","Krt14","Elf5",
+                   "Emid1","Auts2","Il1b","Prlr")
+
+
+p1 <- FeaturePlot(scGemms0,features = my_features2
+            ,ncol = 2,
+            combine = T,cols = c("#d6d6d6","#6e016b"))  &
+        NoAxes()  & NoLegend() &
+        theme(plot.title = element_text(hjust = 0.5, size = 20,
+                                        face = "plain"), 
+              legend.text = element_text(size = 24)) &
+        ylim(-18,-4) & xlim(-12,10)
+
+ggsave("figures/Ex01B_markers.pdf",p1,width = 7, height = 10)
 
 
 
@@ -132,7 +122,7 @@ p1 <- DotPlot(scGemms0,
               axis.text.y = element_text(hjust = 1, size = 20),
               axis.title = element_blank())
 
-ggsave("figures/S2A_epithelial_dotplot.pdf",plot = p1,
+ggsave("figures/Ex02A_epithelial_dotplot.pdf",plot = p1,
        width = 7, height = 12)
 
 
@@ -224,7 +214,7 @@ stack_plot <-  ggplot(data_tcell, aes(x = stage ,
               axis.line = element_blank(),axis.ticks = element_blank(),
               legend.text=element_text(size=24)) + coord_flip()
 
-ggsave("figures/S2D_tumor_proportion_Stage.pdf",stack_plot,
+ggsave("figures/Ex02D_tumor_proportion_Stage.pdf",stack_plot,
        height = 2.5, width = 10)
 
 
@@ -255,6 +245,8 @@ data_tcell$labs <- data_tcell$Tumor
 
 data_tcell <- data_tcell[order(data_tcell$Tumor, decreasing = T),]
 data_tcell$cell_type_secondary <- factor(rownames(data_tcell))
+
+write.csv(data_tcell,"output/SourceData Ex1_c_1.csv")
 
 data_tcell <- tidyr::pivot_longer(data_tcell,cols= c("Non-tumor", "Tumor"),
                                   names_to = "type")
@@ -301,7 +293,7 @@ stack_plot <-  ggplot(data_tcell, aes(x = (cell_type_secondary),
               axis.ticks = element_blank()) +
         coord_flip()
 
-ggsave("figures/S2C_tumor_cell_proportion.pdf",stack_plot,
+ggsave("figures/Ex02C_tumor_cell_proportion.pdf",stack_plot,
        height = 14 * 0.5, width = 6.5)
 
 
@@ -317,6 +309,9 @@ data_tcell <- data_tcell/data_tcell$tot
 
 data_tcell <- data_tcell[order(data_tcell$`HER2 POS`, decreasing = T),]
 data_tcell$cell_type_secondary <- factor(rownames(data_tcell))
+
+write.csv(data_tcell,"output/SourceData Ex1_c_2.csv")
+
 
 data_tcell$labs <- data_tcell$`HER2 POS`
 
@@ -347,7 +342,7 @@ stack_plot <-  ggplot(data_tcell, aes(x = (cell_type_secondary),
         coord_flip()
 
 
-ggsave("figures/S2C_HER2_cell_proportion.pdf",stack_plot,
+ggsave("figures/Ex02C_HER2_cell_proportion.pdf",stack_plot,
        height = 14 * 0.5, width = 6.5)
 
 

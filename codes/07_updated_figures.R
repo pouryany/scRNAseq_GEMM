@@ -119,23 +119,6 @@ markers_list <- rev(c(
 ))
 
 
-for(item in markers_list){
-  
-  p00 <- FeaturePlot(t_cells, item, combine = T, label = F,
-                     pt.size = 0.6,cols = c("#d6d6d6","#6e016b")) & 
-    NoAxes() & NoLegend()&
-    theme(title = element_text(hjust = 1))&
-    ylim(-5,14) & xlim(-6,12) &
-    theme(plot.title = element_text(hjust = 0, size = 24, face = "plain"), 
-          legend.text = element_text(size = 24))
-  
-  if(!dir.exists("figures/S3B_all_markers_immune/"))
-    dir.create("figures/S3B_all_markers_immune/",recursive = T)
-  
-  ggsave(paste0("figures/S3B_all_markers_immune/",item,".png"),
-         p00,width = 9/3, height = 8/3)
-}
-
 
 Idents(scGemms) <- "cell_type_secondary"
 
@@ -193,7 +176,7 @@ p1 <-   EnhancedVolcano(cluster0.markers,
                         legendPosition = "none") 
 
 
-ggsave("figures/S05A_nk_DE_volcano.pdf",p1,width = 12,height = 10)
+ggsave("figures/S03A_nk_DE_volcano.pdf",p1,width = 12,height = 10)
 
 
 

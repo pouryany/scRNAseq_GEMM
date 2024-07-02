@@ -40,3 +40,5 @@ ggsave("figures/01G_maturation_tumor.pdf", height = 6 , width = 13)
 
 saveRDS(scGemms0,"data/04_cytoTRACE_tumors.RDS")
 
+#scGemms0 <- readRDS("data/04_cytoTRACE_tumors.RDS")
+write.csv(scGemms0@meta.data,"output/SourceData1_CytoTrace.csv")

@@ -98,7 +98,63 @@ p03 <- DimPlot(scGemms,group.by = "stage", cols = my_cols[c(2,7)],
 ((p02/p01 /p03) | p00)  +  plot_layout(widths = c(1, 3))
 
 
-#> Associated figures with Figures 1B, 1C and S2B
-ggsave("figures/01B_1C_S2B_umap.pdf", height = 12 , width = 20 )
+#> Associated figures with Figures 1B, 1C
+ggsave("figures/01B_1C_umap.pdf", height = 12 , width = 20 )
 
 
+
+
+
+
+
+
+### Exporting metadata
+
+
+order_vec <-  c(
+        "Alv-Proliferating","Alv-Basal",
+        "Basal",
+        "Alv 1","Alv 2","Alv 3",
+        "Alv 4", 
+        "Undefined Alv","Hormone Sensing",
+        "CD4+ Naïve", "CD4+ Treg",             
+        "CD8+ Naïve", "CD8+ CM","CD8+ ISG",
+        "CD8+ Effector",
+        "CD8+ TRM",
+        "CD8+ Progenitor Ex",
+        "CD8+ Ex", 
+        "CD8+ Proliferating",
+        "NK",
+        "Macrophage",
+        "Neutrophil","B cell",        
+        "Fibroblast")    
+
+
+
+
+scMetadata <- scGemms@meta.data
+
+
+
+colnames(scMetadata)
+
+
+
+scales::show_col(unique(scMetadata$color))
+class(scMetadata)
+scMetadata <- scMetadata[,setdiff(colnames(scMetadata),c("orig.ident","keep",
+                                          "seurat_clusters","doublets",
+                                          "cell_type_detail"))]
+
+new_column_names <- c("stage" = "Time since induction", 
+                      "cell_type_secondary" = "cell subtype",
+                      "cell_type_primary" ="primary cell type")
+
+# Update the column names
+colnames(scMetadata)[match(names(new_column_names), colnames(scMetadata))] <- new_column_names
+umapCoord <- as.data.frame(Embeddings(object = scGemms[["umap"]]))
+
+all(rownames(umapCoord) == rownames(scMetadata))
+scMetadata <- cbind(scMetadata,umapCoord)
+
+write.csv(scMetadata,"output/SourceData1.csv")

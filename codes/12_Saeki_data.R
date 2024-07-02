@@ -4,6 +4,8 @@ library(ggplot2)
 library(RColorBrewer)
 
 # Data Source PMID: 34079055
+# download the Harmony data from the following url 
+# (https://mouse-mammary-epithelium-integrated.cells.ucsc.edu)
 temp <- readRDS("~/Downloads/Harmony.rds")
 
 

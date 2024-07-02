@@ -59,15 +59,15 @@ rankSimilarity(cellchat, type = "functional")
 
 
 gg1 <- rankNet(cellchat, mode = "comparison",
-               stacked = T, do.stat = TRUE,measure = "weight", font.size = 11)
+               stacked = T, do.stat = TRUE,measure = "weight",font.size = 11)
 
 
-cairo_pdf("figures/S04B_cellchat_significant_pathways.pdf",
+cairo_pdf("figures/Ex05B_cellchat_significant_pathways.pdf",
           width = 5,height = 13, onefile = T)
 gg1
 dev.off()
 
-
+write.csv(gg1$data,"output/SourceData Ex5_b.csv")
 
 
 # Compute the network centrality scores
@@ -245,7 +245,7 @@ ht2 = netAnalysis_signalingRole_heatmap_modified(object.list[[i+1]],
 
 
 
-cairo_pdf("figures/S04A_cellchat_heatmap.pdf",
+cairo_pdf("figures/Ex05A_cellchat_heatmap.pdf",
           width = 20,height = 26, onefile = T)
 ht_list =  ht1 + ht2
 

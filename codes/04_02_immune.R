@@ -139,5 +139,5 @@ DotPlot(scGemms0,
                              axis.title = element_blank())
 
 
-ggsave("figures/S3A_Immune_dotplot.pdf",width = 7, height = 12)
+ggsave("figures/Ex03A_Immune_dotplot.pdf",width = 7, height = 12)
 

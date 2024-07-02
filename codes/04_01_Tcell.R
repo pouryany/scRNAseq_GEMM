@@ -81,6 +81,28 @@ ggsave("figures/03A_Tcell_umap.pdf",p00, height = 9  , width = 15 )
 
 
  
+my_features2 <- c( "Cd4", "Foxp3", "Cd8a",
+                   "Cd8b1", "Ncr1","Cd44",
+                   "Ccr7", "Sell",  "Il7r",
+                   "Isg15","Pdcd1","Mki67",
+                   "Fcer1g","Gzmb")
+
+
+
+p1 <- FeaturePlot(scGemms0,features = my_features2
+                  ,ncol = 3,
+                  combine = T,cols = c("#d6d6d6","#6e016b"))  &
+        NoAxes()  & NoLegend() &
+        theme(plot.title = element_text(hjust = 0.5, size = 20,
+                                        face = "plain"), 
+              legend.text = element_text(size = 24)) &
+        ylim(-4,9) & xlim(-6,10)
+
+ggsave("figures/Ex03B_markers.pdf",p1,width = 6, height = 8)
+
+
+
+
 
 stack_plotter_sc <- function(data_meta, var1 = "cell_type_secondary",
                              var2 = "stage", var2_freq = "Early",
@@ -228,7 +250,7 @@ vln_eGFP <- VlnPlot(scGemms0,features = c("Sell", "Ccr7","Lef1","Tcf7",
               axis.title.y = element_blank(),
               plot.title = element_text(size = 30, face = "plain", hjust = 0))
 
-ggsave("figures/S3C_Tcell_markers_vln_0.pdf",vln_eGFP,width = 14,height = 12)
+ggsave("figures/Ex03C_Tcell_markers_vln_0.pdf",vln_eGFP,width = 14,height = 12)
 
 
 
@@ -247,7 +269,7 @@ vln_eGFP <- VlnPlot(scGemms0,features = c("Sell", "Ccr7","Lef1","Tcf7",
               axis.title.y = element_blank(),
               plot.title = element_text(size = 30, face = "plain", hjust = 0))
 
-ggsave("figures/S3C_Tcell_markers_vln_legend.pdf",vln_eGFP,width = 14,height = 16)
+ggsave("figures/Ex03C_Tcell_markers_vln_legend.pdf",vln_eGFP,width = 14,height = 16)
 
 
 

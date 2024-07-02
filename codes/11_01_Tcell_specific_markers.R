@@ -110,18 +110,8 @@ p1 <- DotPlot(scGemms0,
 
 
 
-ggsave("figures/Revised_immune_dotplot.pdf", p1,width = 7, height = 16)
+ggsave("figures/Ex04_immune_dotplot.pdf", p1,width = 7, height = 16)
 write.csv(main_list,"output/top_markers_Tcells.csv")
 
 
-
-p1 <- DoHeatmap(scGemms0, 
-        features = c(unique(main_list$Gene)),
-        group.colors = colors0) +
-        scale_fill_gradientn(colors = c("#053061", "#2166ac","#4393c3","#92c5de",
-                                        "#f7f7f7",
-                                        "#f4a582","#d6604d","#b2182b", "#67001f"))
-
-ggsave("figures/Revised_immune_heatmap.pdf",p1,width = 10, height = 12)
-ggsave("figures/Revised_immune_heatmap.png",p1,width = 10, height = 12)
 

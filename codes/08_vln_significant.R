@@ -49,7 +49,7 @@ for (ij in cell_tags){
     main_list <- rbind(main_list,cluster0.markers)
     
 }
-
+main_list0<- main_list
 main_list <- main_list[,c("Gene","cell")]
 names(main_list) <- c("feature","ident")
 
@@ -99,63 +99,14 @@ vln_eGFP1 <- VlnPlot_costumized(scGemms0,my_features = my_features,
                                 x_size = 16)
 
 
-cairo_pdf("figures/S03D_t_cell_x_markers.pdf",width = 5,height = 8,onefile = T)
+cairo_pdf("figures/Ex03D_t_cell_x_markers.pdf",width = 5,height = 8,onefile = T)
 vln_eGFP1
 dev.off()
 
-######
-#*
-#*
-#* Adding NK Cells and DNAJB1 to the mix 
-#* 
-#* Remove if not necessary
-#*
-#*
-#####
+save_me <- main_list0[main_list0$Gene %in% my_features&
+                        main_list0$cell %in% order_vec,]
 
-t_cells <- grep("T cell: CD8|NK", unique(scGemms$cell_type_detail),value = T)
-scGemms0 <- subset(scGemms, subset = cell_type_detail %in% t_cells)
-
-
-cell_tags <- unique(as.character(scGemms0$seurat_clusters))
-
-
-scGemms0$cell_type_secondary <- droplevels(scGemms0$cell_type_secondary)
-colors0 <- colorss[names(colorss) %in% levels(scGemms0$cell_type_secondary)]
-
-
-Idents(scGemms0) <- "cell_type_secondary"
-
-order_vec <-  c(           
-  "CD8+ Naïve", "CD8+ CM",
-  "CD8+ ISG","CD8+ Effector",
-  "CD8+ TRM",
-  "CD8+ Progenitor Ex",
-  "CD8+ Ex", 
-  "CD8+ Proliferating", "NK")    
-
-
-scGemms0@active.ident <- factor(scGemms0@active.ident, levels = order_vec)
-
-my_features <- c("Klf2", 
-                 "Tcf7",
-                 "S1pr1",
-                 "Klrd1","Fcer1g",
-                 "Cd160", "Tigit",
-                 "Ccl4","Ccl5","Cxcr6")
-
-vln_eGFP1 <- VlnPlot_costumized(scGemms0,my_features = my_features,
-                                idents_order = order_vec,
-                                signif_list = main_list,
-                                plot_alphabetic = F,
-                                x_size = 16)
-
-
-cairo_pdf("figures/S03D_alternative_t_cellNK_x_markers.pdf",width = 5,height = 8.5,onefile = T)
-vln_eGFP1
-dev.off()
-
-
+write.csv(save_me,"output/SourceData Ex3_d.csv")
 
 
 
@@ -172,20 +123,6 @@ colors0 <- colorss[names(colorss) %in% levels(scGemms0$cell_type_secondary)]
 
 scGemms0@active.ident <- factor(x = scGemms0@active.ident, levels = order_vec)
 
-my_features <- c("Spp1","Itgav","Itgb6", 
-  "Tnfsf11","Tnfrsf11a",
-  "Sell","Podxl",
-  "Lta","Tnfrsf1a","Ltb","Ltbr",
-  "Itgb2","Icam1",
-  "Gzma","F2r","F2rl1","Pard3")
-
-
-vln_eGFP <- VlnPlot_costumized(scGemms0,my_features = my_features,
-                               idents_order = order_vec,
-                                signif_list = main_list,
-                               plot_alphabetic = F)
- ggsave("figures/S05B_nk_cell_chat.pdf",
-        vln_eGFP,width = 5,height = 12)
 
  
  my_features <- c("Ifng","Ifngr1","Ifngr2")
@@ -207,10 +144,10 @@ vln_eGFP <- VlnPlot_costumized(scGemms0,my_features = my_features,
            legend.position = "none")
 
  
- my_features <- c("Mif","Cd74","Cd44", "Ackr3")
+ my_features2 <- c("Mif","Cd74","Cd44", "Ackr3")
  
  
- vln_eGFP2 <- VlnPlot_costumized2(scGemms0,my_features = my_features,
+ vln_eGFP2 <- VlnPlot_costumized2(scGemms0,my_features = my_features2,
                                   idents_order = order_vec,
                                   signif_list = main_list,
                                   plot_alphabetic = F) &
@@ -228,12 +165,14 @@ vln_eGFP <- VlnPlot_costumized(scGemms0,my_features = my_features,
 
   vln_eGFP1 + vln_eGFP2 & plot_layout(heights = c(3,4))
  
- 
- 
  ggsave("figures/04D_select_nk_cell_chat.pdf",
         width = 3,height = 10)
  
-
+ save_me <- main_list0[main_list0$Gene %in% c(my_features,my_features2) &
+                         main_list0$cell %in% order_vec,]
+ 
+ write.csv(save_me,"output/SourceData4_d.csv")
+ 
  
  scGemms0 <- subset(scGemms,
                     cells = names(grep(pattern = "Alv-|Basal",
@@ -302,6 +241,7 @@ vln_eGFP <- VlnPlot_costumized(scGemms0,my_features = my_features,
      
  }
  
+ main_list0<- main_list
  main_list <- main_list[,c("Gene","cell")]
  names(main_list) <- c("feature","ident")
  
@@ -327,11 +267,11 @@ vln_eGFP <- VlnPlot_costumized(scGemms0,my_features = my_features,
    coord_fixed(0.3)
  
  
- my_features <- c("Gzma","Ifng","Prf1",
+ my_features1 <- c("Gzma","Ifng","Prf1",
    "Pdcd1","Lag3","Cd244a","Tigit",
    "Ctla4","Cd160","Ccl3", "Ccl4","Ccl5")
  
- vln_eGFP2 <- VlnPlot_costumized(t_cells,my_features = my_features,
+ vln_eGFP2 <- VlnPlot_costumized(t_cells,my_features = my_features1,
                                  idents_order = order_vec,
                                  signif_list = main_list,
                                  plot_alphabetic = F) + 
@@ -347,4 +287,9 @@ vln_eGFP <- VlnPlot_costumized(scGemms0,my_features = my_features,
  vln_eGFP2
  dev.off()
 
-
+ save_me <- main_list0[main_list0$Gene %in% c(my_features,my_features1) &
+                         main_list0$cell %in% cell_tags,]
+ 
+ write.csv(save_me,"output/SourceData3_c.csv")
+ 
+ 
