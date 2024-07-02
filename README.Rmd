@@ -36,8 +36,8 @@ Raw RNA-Seq data can be accessed from NCBI GEO (GSE212029)
 |---|------------|------------|
 | `01_import_sc.R`                             | Preprocessing raw scRNA-Seq reads from 10X assays. | processed RDS files  |
 | `02_01_clustering.R`                         | Normalizing and clustering processed scRNA-Seq data.  | processed RDS files |
-| `02_02_scPlots.R`                            | Plotting clusters and cellular subclasses.  | Figures 1B, 1C and Extended Data Fig. 2B  |
-| `03_01_tumor_plots.R`                        | Plotting tumor clusters, associated markers, and cellular proportions.  | Figures 1D, 1E, and 1G; Extended Data Fig 1, and 2A-D |
+| `02_02_scPlots.R`                            | Plotting clusters and cellular subclasses.  | Figures 1B, 1C   |
+| `03_01_tumor_plots.R`                        | Plotting tumor clusters, associated markers, and cellular proportions.  | Figures 1D, 1E, and 1G; Extended Data Fig 2|
 | `03_02_tumor_markers.R`                      | Defining tumor markers and differentially expressed genes in specific subclusters between early and late tumors.  | Marker genes for epithelial cell types and DE genes.   |
 | `03_03_cytoTracing.R`                        | CytoTrace algorithm generates cell differentiation status.  | Figure 1G |
 | `03_04_dirchlet_tumor.R`                     | Dirichlet regression determines changes in cellular proportions between late and early tumors.  | Cell proportion table and associated statistics.  |
@@ -46,15 +46,24 @@ Raw RNA-Seq data can be accessed from NCBI GEO (GSE212029)
 | `04_02_immune.R`                             | Generating cell-type markers of immune cells. Plotting key markers of immune cells  | Extended Data Fig. 3A, marker genes for immune cells.  |
 | `05_00_cell_cell_communication_early.R`      | CellChat algorithm defines significant communication events in early tumors.  |  |
 | `05_00_cell_cell_communication_late.R`       | CellChat algorithm defines significant communication events in late tumors.   |  |
-| `05_01_cell_cell_communication_compare.R`    | Comparison of cell-cell communication events between late and early tumors.  | Figures 4A-B and Extended Data Fig. 4    |
+| `05_01_cell_cell_communication_compare.R`    | Comparison of cell-cell communication events between late and early tumors.  | Figures 4A-B and Extended Data Fig. 5    |
 | `05_02_cell_cell_communication_secondary.R`  | Comparison of cell-cell communication events between late and early tumors.  |  Figure 4  |
-| `06_01_Bulk_comparison_tumor.R`              | Comparison of single-cell and bulk RNA-Seq datasets.  | Figures 5J-K and Extended Data Fig. 7F  |
-| `07_updated_figures.R`                       | Additional plots and analyses relating to immune cell populations.  | Extended Data Fig. 3C and 5A |
-| `08_vln_significant.R`                       | Violin plots for functional markers across immune cell clusters.   | Figure 4D and Extended Data Fig. 3D  |
-| `09_Atp_genes.R`                             | Heatmaps of ATP- and metabolism-associated genes and pathways in tumors.  | Extended Data Fig. S2E  |
+| `06_01_Bulk_comparison_tumor.R`              | Comparison of single-cell and bulk RNA-Seq datasets.  | Figure 6 and Extended Data Fig. 7F  |
+| `07_updated_figures.R`                       | Additional plots and analyses relating to immune cell populations.  | Extended Data Fig. 3C |
+| `08_vln_significant.R`                       | Violin plots for functional markers across immune cell clusters.   | Figure 3 and 4D and Extended Data Fig. 3D  |
+| `09_Atp_genes.R`                             | Heatmaps of ATP- and metabolism-associated genes and pathways in tumors.  | Extended Data Fig. 1E  |
 | `10_ISG.R`                                   | Defining interferon stimulated genes among differentially expressed genes in late versus early tumors.|   |
-| `11_DESeq2_4T1.R`                                   | Defining differentially expressed genes in decitabine treated 4T1 cells versus untreated controls.|   |
-| `12_DESeq2_B16.R`                                   | Defining differentially expressed genes in decitabine treated B16 cells versus untreated controls.|    |
+| `11_01_Tcell_specific_markers.R`                                   | Defining top markers of tumor infiltrating lymphocytes.| Extended Data Fig. 4   |
+| `11_02_Checkpointmarkers.R`                                   | Expression of analysis of genes encoding for checkpoint ligand and receptors.|Supplementary Figures   |
+| `11_03_exhausted.R`                                   | Defining the differentially expressed genes between CD8+ Ex vs progenitor Ex.|   |
+| `11_04_Gasdermins.R`                                   | Differential expression analysis of Gasdermin gene family.|   |
+| `11_05_TRM.R`                                   | Proportions of genes in interest expressed in TRM cell population.|   |
+| `11_07_gdTcells.R`                                   | Expression of gdT cell related genes in the TRM population.|   |
+| `11_09_gd_allT.R`                                   | Expression of gdT cell related genes in CD8+ population.|   |
+| `12_Saeki_data.R`                                   | Comparison of results with normal mammary epithelial scRNA-Seq.|   |
+| `13_LiLab_data.R`                                   | Comparison of results with ILTCK scRNA-Seq.|   |
+| `14_Shiny_app.R`                                   | Building Shiny App.|   |
+| `15_DESeq2_4T1.R`                                   | Bulk RNA0Seq Data Analysis.|   |
 | `utils.R`                                    | Predefined functions for plotting and analysis.|   |
 
 

@@ -48,13 +48,13 @@ Raw RNA-Seq data can be accessed from NCBI GEO (GSE212029)
 <tr class="odd">
 <td><code>02_02_scPlots.R</code></td>
 <td>Plotting clusters and cellular subclasses.</td>
-<td>Figures 1B, 1C and Extended Data Fig. 2B</td>
+<td>Figures 1B, 1C</td>
 </tr>
 <tr class="even">
 <td><code>03_01_tumor_plots.R</code></td>
 <td>Plotting tumor clusters, associated markers, and cellular
 proportions.</td>
-<td>Figures 1D, 1E, and 1G; Extended Data Fig 1, and 2A-D</td>
+<td>Figures 1D, 1E, and 1G; Extended Data Fig 2</td>
 </tr>
 <tr class="odd">
 <td><code>03_02_tumor_markers.R</code></td>
@@ -108,7 +108,7 @@ tumors.</td>
 <td><code>05_01_cell_cell_communication_compare.R</code></td>
 <td>Comparison of cell-cell communication events between late and early
 tumors.</td>
-<td>Figures 4A-B and Extended Data Fig. 4</td>
+<td>Figures 4A-B and Extended Data Fig. 5</td>
 </tr>
 <tr class="even">
 <td><code>05_02_cell_cell_communication_secondary.R</code></td>
@@ -119,25 +119,25 @@ tumors.</td>
 <tr class="odd">
 <td><code>06_01_Bulk_comparison_tumor.R</code></td>
 <td>Comparison of single-cell and bulk RNA-Seq datasets.</td>
-<td>Figures 5J-K and Extended Data Fig. 7F</td>
+<td>Figure 6 and Extended Data Fig. 7F</td>
 </tr>
 <tr class="even">
 <td><code>07_updated_figures.R</code></td>
 <td>Additional plots and analyses relating to immune cell
 populations.</td>
-<td>Extended Data Fig. 3C and 5A</td>
+<td>Extended Data Fig. 3C</td>
 </tr>
 <tr class="odd">
 <td><code>08_vln_significant.R</code></td>
 <td>Violin plots for functional markers across immune cell
 clusters.</td>
-<td>Figure 4D and Extended Data Fig. 3D</td>
+<td>Figure 3 and 4D and Extended Data Fig. 3D</td>
 </tr>
 <tr class="even">
 <td><code>09_Atp_genes.R</code></td>
 <td>Heatmaps of ATP- and metabolism-associated genes and pathways in
 tumors.</td>
-<td>Extended Data Fig. S2E</td>
+<td>Extended Data Fig. 1E</td>
 </tr>
 <tr class="odd">
 <td><code>10_ISG.R</code></td>
@@ -146,18 +146,64 @@ genes in late versus early tumors.</td>
 <td></td>
 </tr>
 <tr class="even">
-<td><code>11_DESeq2_4T1.R</code></td>
-<td>Defining differentially expressed genes in decitabine treated 4T1
-cells versus untreated controls.</td>
+<td><code>11_01_Tcell_specific_markers.R</code></td>
+<td>Defining top markers of tumor infiltrating lymphocytes.</td>
+<td>Extended Data Fig. 4</td>
+</tr>
+<tr class="odd">
+<td><code>11_02_Checkpointmarkers.R</code></td>
+<td>Expression of analysis of genes encoding for checkpoint ligand and
+receptors.</td>
+<td>Supplementary Figures</td>
+</tr>
+<tr class="even">
+<td><code>11_03_exhausted.R</code></td>
+<td>Defining the differentially expressed genes between CD8+ Ex vs
+progenitor Ex.</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td><code>12_DESeq2_B16.R</code></td>
-<td>Defining differentially expressed genes in decitabine treated B16
-cells versus untreated controls.</td>
+<td><code>11_04_Gasdermins.R</code></td>
+<td>Differential expression analysis of Gasdermin gene family.</td>
 <td></td>
 </tr>
 <tr class="even">
+<td><code>11_05_TRM.R</code></td>
+<td>Proportions of genes in interest expressed in TRM cell
+population.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>11_07_gdTcells.R</code></td>
+<td>Expression of gdT cell related genes in the TRM population.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>11_09_gd_allT.R</code></td>
+<td>Expression of gdT cell related genes in CD8+ population.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>12_Saeki_data.R</code></td>
+<td>Comparison of results with normal mammary epithelial scRNA-Seq.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>13_LiLab_data.R</code></td>
+<td>Comparison of results with ILTCK scRNA-Seq.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td><code>14_Shiny_app.R</code></td>
+<td>Building Shiny App.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>15_DESeq2_4T1.R</code></td>
+<td>Bulk RNA0Seq Data Analysis.</td>
+<td></td>
+</tr>
+<tr class="odd">
 <td><code>utils.R</code></td>
 <td>Predefined functions for plotting and analysis.</td>
 <td></td>
