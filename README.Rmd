@@ -81,6 +81,7 @@ Supplementary files that are necessary for reproducing the study are provided in
 | `RNA_Seq_4T1_raw.csv`                      | Gene expression profiles of decitabine-treated and control 4T1 cell lines.  | This study  |
 | `Table5_DEGenes_4T1.csv` | Differentially expressed genes between decitabine-treated and control 4T1 cell lines.  | This study  |
 | `Tumor_late_early--clustered default  node.csv`| GO clusters generated based on EnrichmentMap algorithm |   |
+| `Cytoscape`| Directory containing cytoscape sessions for analyzing the enrichment terms |   |
 
 
 ## SessionInfo

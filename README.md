@@ -269,6 +269,12 @@ control 4T1 cell lines.</td>
 <td>GO clusters generated based on EnrichmentMap algorithm</td>
 <td></td>
 </tr>
+<tr class="even">
+<td><code>Cytoscape</code></td>
+<td>Directory containing cytoscape sessions for analyzing the enrichment
+terms</td>
+<td></td>
+</tr>
 </tbody>
 </table>
 
