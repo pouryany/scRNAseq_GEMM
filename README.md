@@ -11,8 +11,8 @@ questions you may have about the codes.
 
 Zhang, Y., Naderi Yeganeh, P. et al. **Tumor editing suppresses innate
 and adaptive antitumor immunity and is reversed by inhibiting DNA
-methylation** *Nature Immunology* (2024) doi:
-10.1038/s41590-024-01932-8[link](https://www.nature.com/articles/s41590-024-01932-8).
+methylation** *Nature Immunology* (2024) doi: 10.1038/s41590-024-01932-8
+[(link)](https://www.nature.com/articles/s41590-024-01932-8).
 
 ## Code instructions
 
