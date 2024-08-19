@@ -1,14 +1,18 @@
 ## Overview
 
 This repository contains the codes for generating the figures and
-results presented in **Tumor editing during early tumorigenesis
-suppresses innate and adaptive anti-tumor immunity and is reversed by
-inhibiting DNA methylation**.
+results presented in **Tumor editing suppresses innate and adaptive
+antitumor immunity and is reversed by inhibiting DNA methylation**.
 
 please contact `pnaderiy [at] bidmc [dot] harvard [dot] edu` for any
 questions you may have about the codes.
 
 ## Citations
+
+Zhang, Y., Naderi Yeganeh, P. et al. **Tumor editing suppresses innate
+and adaptive antitumor immunity and is reversed by inhibiting DNA
+methylation** *Nature Immunology* (2024) doi:
+10.1038/s41590-024-01932-8(link)\[<https://www.nature.com/articles/s41590-024-01932-8>\].
 
 ## Code instructions
 
@@ -200,7 +204,7 @@ population.</td>
 </tr>
 <tr class="even">
 <td><code>15_DESeq2_4T1.R</code></td>
-<td>Bulk RNA0Seq Data Analysis.</td>
+<td>Bulk RNA-Seq Data Analysis.</td>
 <td></td>
 </tr>
 <tr class="odd">
@@ -267,6 +271,12 @@ control 4T1 cell lines.</td>
 <tr class="odd">
 <td><code>Tumor_late_early--clustered default  node.csv</code></td>
 <td>GO clusters generated based on EnrichmentMap algorithm</td>
+<td></td>
+</tr>
+<tr class="even">
+<td><code>Cytoscape</code></td>
+<td>Directory containing cytoscape sessions for analyzing the enrichment
+terms</td>
 <td></td>
 </tr>
 </tbody>

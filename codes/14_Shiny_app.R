@@ -1,4 +1,4 @@
-### Instalaation stuf
+### Installation stuff
 # 
 # reqPkg = c("data.table", "Matrix", "hdf5r", "reticulate", "ggplot2",
 #            "gridExtra", "glue", "readr", "RColorBrewer", "R.utils", "Seurat")
@@ -82,7 +82,16 @@ scConf = modColours(scConf, meta.to.mod = "cell subtype",
                     new.colours= my_cols[order_vec])
 
 
-
+citation = list(
+    author  = "Zhang Y., Naderi Yeganeh P. et al.",
+    title   = "Tumor editing suppresses innate and adaptive antitumor immunity and is reversed by inhibiting DNA methylation",
+    journal = "Nature Immunology",
+    volume  = "",
+    page    = "",
+    year    = "2024", 
+    doi     = "10.1038/s41590-024-01932-8",
+    link    = "https://www.nature.com/articles/s41590-024-01932-8")
 
 makeShinyApp(seu, scConf, gene.mapping = FALSE,
-             shiny.title = "GEMM Single cell") 
+             shiny.footnotes = citation,
+             shiny.title = "scgemm_app2") 

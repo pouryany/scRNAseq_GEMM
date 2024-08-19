@@ -16,12 +16,15 @@ knitr::opts_chunk$set(echo = TRUE)
 ## Overview
 
 This repository contains the codes for generating the figures and results
-presented in **Tumor editing during early tumorigenesis suppresses innate and adaptive anti-tumor immunity and is reversed by inhibiting DNA methylation**. 
+presented in **Tumor editing suppresses innate and adaptive antitumor immunity and is reversed by inhibiting DNA methylation**. 
 
 please contact `pnaderiy [at] bidmc [dot] harvard [dot] edu` for any questions 
 you may have about the codes.
 
 ## Citations
+
+Zhang, Y., Naderi Yeganeh, P. et al. **Tumor editing suppresses innate and adaptive antitumor immunity and is reversed by inhibiting DNA methylation** *Nature Immunology* (2024) doi: 10.1038/s41590-024-01932-8(link)[https://www.nature.com/articles/s41590-024-01932-8].
+
 ## Code instructions
 
 First, you need to download the filtered scRNA-Seq dataset from NCBI GEO (GSE234917) and 
@@ -63,7 +66,7 @@ Raw RNA-Seq data can be accessed from NCBI GEO (GSE212029)
 | `12_Saeki_data.R`                                   | Comparison of results with normal mammary epithelial scRNA-Seq.|   |
 | `13_LiLab_data.R`                                   | Comparison of results with ILTCK scRNA-Seq.|   |
 | `14_Shiny_app.R`                                   | Building Shiny App.|   |
-| `15_DESeq2_4T1.R`                                   | Bulk RNA0Seq Data Analysis.|   |
+| `15_DESeq2_4T1.R`                                   | Bulk RNA-Seq Data Analysis.|   |
 | `utils.R`                                    | Predefined functions for plotting and analysis.|   |
 
 
@@ -81,6 +84,7 @@ Supplementary files that are necessary for reproducing the study are provided in
 | `RNA_Seq_4T1_raw.csv`                      | Gene expression profiles of decitabine-treated and control 4T1 cell lines.  | This study  |
 | `Table5_DEGenes_4T1.csv` | Differentially expressed genes between decitabine-treated and control 4T1 cell lines.  | This study  |
 | `Tumor_late_early--clustered default  node.csv`| GO clusters generated based on EnrichmentMap algorithm |   |
+| `Cytoscape`| Directory containing cytoscape sessions for analyzing the enrichment terms |   |
 
 
 ## SessionInfo

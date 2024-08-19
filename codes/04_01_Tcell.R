@@ -171,7 +171,8 @@ stack_plot <-  ggplot(data_tcell, aes(x = stage ,
                                          hjust = 1,
                                          size = 30, face = "plain", 
                                          colour = "black"),
-              axis.line = element_blank(),axis.ticks = element_blank()) +
+              axis.line = element_blank()#,axis.ticks = element_blank()
+              ) +
         coord_flip()
 
 ggsave("figures/03B_tcell_proportion_stage.pdf",stack_plot,
